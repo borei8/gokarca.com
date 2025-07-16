@@ -1,0 +1,151 @@
+/* ========================= Custom dark palette =============================
+   Palette:
+   Background      #111111  (very dark charcoal)
+   Surface/Card    #1B1B1B  (slightly lighter surface)
+   Accent 1 (CTA)  #8CF200  (vivid neon-lime)
+   Accent 2 (Hover) #B82601 (rich vermilion)
+   Text/Lines      #E9E9E9  (almost white)
+============================================================================ */
+:root {
+  --color-bg:        #111111;
+  --color-surface:   #1B1B1B;
+  --color-accent:    #8CF200;
+  --color-accent-2:  #B82601;
+  --color-text:      #E9E9E9;
+}
+
+/* === GLOBAL OVERRIDES ===================================================== */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  color: var(--color-text);
+}
+
+/* Links & interactive text -------------------------------------------------- */
+a, .custom-link {
+  color: var(--color-accent);
+  transition: color .3s ease;
+}
+a:hover, .custom-link:hover {
+  color: var(--color-accent-2);
+}
+
+/* Buttons ------------------------------------------------------------------- */
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #111;                      /* text on neon lime */
+  box-shadow: 0 0 12px var(--color-accent);
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.btn-primary:hover {
+  background: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+  color: #fff;
+  box-shadow: 0 0 14px var(--color-accent-2);
+}
+
+/* Navigation bar ------------------------------------------------------------ */
+.navbar, .bg-light {               /* bg-light gets repurposed for dark theme */
+  background: var(--color-surface) !important;
+}
+.navbar .nav-link {
+  color: var(--color-text) !important;
+  transition: color .3s ease;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--color-accent) !important;
+}
+
+/* Sections that were pure white in original template ----------------------- */
+.section-padding,
+.section-padding.pb-0,
+.contact,
+.news {
+  background: var(--color-bg);
+}
+
+/* Hero overlay over video / image ----------------------------------------- */
+.hero .overlay {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0) 0%, rgba(27, 27, 27, 0.845) 100%);
+}
+
+/* Cards, portfolio thumbs, etc. ------------------------------------------- */
+.card,
+.portfolio-thumb,
+.news-thumb,
+.carousel-item img.team-image {
+  background: var(--color-surface);
+}
+
+/* Utility class re-skins ---------------------------------------------------- */
+.bg-dark                  { background: var(--color-surface) !important; }
+.bg-warning, .text-warning{ background: var(--color-accent-2) !important; color: #fff !important; }
+.bg-primary, .text-primary,
+.bg-success, .text-success,
+.bg-info,    .text-info,
+.bg-danger,  .text-danger { background: var(--color-accent) !important; color: #111 !important; }
+.text-secondary-white-color { color: var(--color-text) !important; }
+
+/* Icons / micro-anim glow --------------------------------------------------- */
+.icon-glow {
+  color: var(--color-accent);
+  filter: drop-shadow(0 0 6px var(--color-accent));
+  transition: filter .3s ease, color .3s ease;
+}
+.icon-glow:hover {
+  color: var(--color-accent-2);
+  filter: drop-shadow(0 0 8px var(--color-accent-2));
+}
+
+/* Form controls ------------------------------------------------------------- */
+.form-control,
+.form-select {
+  background: var(--color-surface);
+  border-color: var(--color-surface);
+  color: var(--color-text);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 .25rem rgba(140, 242, 0, .25);
+}
+.form-check-input:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Divider lines ------------------------------------------------------------- */
+hr {
+  border-color: rgba(233, 233, 233, 0.1);
+}
+
+/* Optional gradient text helper -------------------------------------------- */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* numbered circles */
+.step-circle{
+  display:inline-block;
+  width:46px;height:46px;line-height:46px;
+  border-radius:50%;
+  font-weight:700;
+  background:var(--color-accent);
+  color:#111;text-align:center;
+}
+@media(max-width:767.98px){
+  .step-circle{margin-bottom:.5rem;}
+}
+
+
+
+/* ===== END custom.css ====================================================== */
